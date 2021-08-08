@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HW_2_10" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Random :)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dx9-BZ-8CA">
+                                <rect key="frame" x="160" y="109" width="94.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="29B-lm-p3P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="gcQ-uB-tk7">
+                                <rect key="frame" x="20" y="221" width="374" height="170"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJh-yc-lCN">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <state key="normal" title="trivia"/>
+                                        <connections>
+                                            <action selector="clickTypeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f6k-1Y-nQp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBp-h1-a68">
+                                        <rect key="frame" x="0.0" y="70" width="374" height="30"/>
+                                        <state key="normal" title="math"/>
+                                        <connections>
+                                            <action selector="clickTypeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9T6-S0-Re2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCf-ye-sbi">
+                                        <rect key="frame" x="0.0" y="140" width="374" height="30"/>
+                                        <state key="normal" title="year"/>
+                                        <connections>
+                                            <action selector="clickTypeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hdx-hQ-Yik"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fact" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EU3-mI-9Gz">
+                                <rect key="frame" x="30" y="441" width="354" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.92942975230000002" green="0.60925774310000003" blue="0.5703467727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dx9-BZ-8CA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="5lN-XA-eX0"/>
+                            <constraint firstItem="gcQ-uB-tk7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="LZ2-pt-jea"/>
+                            <constraint firstItem="EU3-mI-9Gz" firstAttribute="top" secondItem="gcQ-uB-tk7" secondAttribute="bottom" constant="50" id="P7t-Da-8bb"/>
+                            <constraint firstItem="EU3-mI-9Gz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Uj9-yn-Dda"/>
+                            <constraint firstItem="gcQ-uB-tk7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="b8d-JW-cqm"/>
+                            <constraint firstItem="dx9-BZ-8CA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bKB-67-nKa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EU3-mI-9Gz" secondAttribute="trailing" constant="30" id="gW5-Io-GzY"/>
+                            <constraint firstItem="gcQ-uB-tk7" firstAttribute="top" secondItem="dx9-BZ-8CA" secondAttribute="bottom" constant="62" id="k9f-MF-LKl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="EU3-mI-9Gz" id="McV-ib-ch7"/>
+                        <outlet property="valueTextField" destination="dx9-BZ-8CA" id="Aat-Am-bo9"/>
+                        <outletCollection property="typeButtons" destination="NJh-yc-lCN" collectionClass="NSMutableArray" id="Dv7-Qb-49W"/>
+                        <outletCollection property="typeButtons" destination="KBp-h1-a68" collectionClass="NSMutableArray" id="oom-Kc-wG1"/>
+                        <outletCollection property="typeButtons" destination="pCf-ye-sbi" collectionClass="NSMutableArray" id="Yii-1b-Tht"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="37.681159420289859" y="69.642857142857139"/>
         </scene>
     </scenes>
 </document>
