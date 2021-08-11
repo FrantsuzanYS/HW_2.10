@@ -27,40 +27,38 @@ class ViewController: UIViewController {
     
     @IBAction func clickTypeButton(_ sender: UIButton) {
 
-        if let result = valueTextField.text {
-            if let _ = Int(result) {
-                value = result}
-            else {
-                if valueTextField.text == "" {
-                    value = "random"}
-                else {
-                    resultLabel.text = "Sorry! Please enter the correct number"
-                    return
-                }
-                }
-        }
+        let value = checkTextFieldValue()
+        
+        guard value != "" else {return}
 
         let type = String(sender.title(for: .normal) ?? "trivia")
         
-        guard let url = URL(string: "http://numbersapi.com/\(value)/\(type)?json") else {return}
+        let url = "http://numbersapi.com/\(value)/\(type)?json"
+        NetworkManager.shared.fetchData(from: url) { result in
+            switch result {
+            case .success(let numberFact):
+                self.resultLabel.text = numberFact.text
+            case .failure(let error):
+                print(error)
+            }
+        }
         
-        URLSession.shared.dataTask(with: url) {data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "Not results")
-                return
-            }
-            
-            do {
-                let numberFact = try JSONDecoder().decode(NumberFact.self, from: data)
-                
-                DispatchQueue.main.async {
-                    self.resultLabel.text = numberFact.text
-                }
-                
-            } catch let error {
-                print(error.localizedDescription)
-            }
-         }.resume()
-
 }
+    
+    func checkTextFieldValue() -> String {
+        
+        if let result = valueTextField.text {
+            if let _ = Int(result) {
+                return result}
+            else {
+                if valueTextField.text == "" {
+                    return "random"}
+                else {
+                    resultLabel.text = "Sorry! Please enter the correct number"
+                }
+                }
+        }
+        
+        return ""
+    }
 }

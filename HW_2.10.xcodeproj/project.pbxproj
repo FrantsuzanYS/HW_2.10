@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4BB401726C459FE0069CE0E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB401626C459FE0069CE0E /* NetworkManager.swift */; };
 		D4C1A3D926C0034500957304 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1A3D826C0034500957304 /* AppDelegate.swift */; };
 		D4C1A3DB26C0034500957304 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1A3DA26C0034500957304 /* SceneDelegate.swift */; };
 		D4C1A3DD26C0034500957304 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1A3DC26C0034500957304 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4BB401626C459FE0069CE0E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D4C1A3D526C0034500957304 /* HW_2.10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW_2.10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4C1A3D826C0034500957304 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4C1A3DA26C0034500957304 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				D4C1A3E326C0034600957304 /* LaunchScreen.storyboard */,
 				D4C1A3E626C0034600957304 /* Info.plist */,
 				D4C1A3EC26C00FD700957304 /* Model.swift */,
+				D4BB401626C459FE0069CE0E /* NetworkManager.swift */,
 			);
 			path = HW_2.10;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				D4C1A3DD26C0034500957304 /* ViewController.swift in Sources */,
 				D4C1A3D926C0034500957304 /* AppDelegate.swift in Sources */,
+				D4BB401726C459FE0069CE0E /* NetworkManager.swift in Sources */,
 				D4C1A3DB26C0034500957304 /* SceneDelegate.swift in Sources */,
 				D4C1A3ED26C00FD700957304 /* Model.swift in Sources */,
 			);
